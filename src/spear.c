@@ -20,12 +20,13 @@ int main(){
     scanf("%d", &A[i]);
   }
   lb = 0;
-  ub = A[0];
+  int max = A[0];
   for(int j = 0; j < n; j++){
-    if (A[j] > ub){ 
-      ub = A[j];
+    if (A[j] > max){ 
+      max = A[j];
     }
   }
+  ub = max + 1;
   while(ub - lb > 1){
     int mid = (lb + ub) / 2;
     if(p(mid)) {
